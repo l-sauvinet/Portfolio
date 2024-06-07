@@ -1,30 +1,24 @@
-# Astro Starter Kit: Portfolio
+# Portfolio de Lucas Sauvinet
 
-```sh
-npm create astro@latest -- --template portfolio
-```
+Bienvenue sur le portfolio de Lucas Sauvinet, développeur full stack. Ce portfolio est conçu pour vous donner un aperçu de mon travail, de mes compétences et de mon parcours professionnel.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/portfolio)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/portfolio)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/portfolio/devcontainer.json)
+## À propos
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Je suis Lucas Sauvinet, un développeur full stack passionné par les technologies web modernes. Avec une jeune expérience dans le développement front-end et back-end, je crée des solutions web. Mon objectif est de fournir des applications de haute qualité qui répondent aux besoins des utilisateurs tout en offrant une expérience utilisateur exceptionnelle.
 
-![portfolio](https://user-images.githubusercontent.com/357379/210779178-a98f0fb7-6b1a-4068-894c-8e1403e26654.jpg)
+## Objectif
 
-## 🧞 Commands
+L'objectif de ce portfolio est de présenter mon travail et de montrer comment je peux apporter de la valeur à des projets potentiels. J'espère que vous trouverez mes réalisations intéressantes et que vous verrez la passion et l'engagement que je mets dans chaque projet.
 
-All commands are run from the root of the project, from a terminal:
+## Contact
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+Pour plus d'informations ou pour discuter de potentiels projets, n'hésitez pas à me contacter :
 
-## 👀 Want to learn more?
+- **Email**: lucasovinet@gmail.com
+- **LinkedIn**: [www.linkedin.com/in/lucas-sauvinet-3607162a4](#)
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Merci de visiter mon portfolio !
+
+---
+
+© 2024 Lucas Sauvinet. Tous droits réservés.

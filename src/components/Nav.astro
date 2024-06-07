@@ -1,6 +1,5 @@
 ---
 import Icon from './Icon.astro';
-import ThemeToggle from './ThemeToggle.astro';
 import type { iconPaths } from './IconPaths';
 
 /** Main menu items */
@@ -12,12 +11,7 @@ const textLinks: { label: string; href: string }[] = [
 
 /** Icon links to social media — edit these with links to your profiles! */
 const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[] = [
-	{ label: 'Twitter', href: 'https://twitter.com/me', icon: 'twitter-logo' },
-	{ label: 'Twitch', href: 'https://twitch.tv/me', icon: 'twitch-logo' },
-	{ label: 'GitHub', href: 'https://github.com/me', icon: 'github-logo' },
-	{ label: 'CodePen', href: 'https://codepen.io/me', icon: 'codepen-logo' },
-	{ label: 'dribbble', href: 'https://dribbble.com/me', icon: 'dribbble-logo' },
-	{ label: 'YouTube', href: 'https://www.youtube.com/@me/', icon: 'youtube-logo' },
+	{ label: 'GitHub', href: 'https://github.com/l-sauvinet', icon: 'github-logo' },
 ];
 ---
 
@@ -25,7 +19,7 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 	<div class="menu-header">
 		<a href="/" class="site-title">
 			<Icon icon="terminal-window" color="var(--accent-regular)" size="1.6em" gradient />
-			Jeanine White
+			Sauvinet Lucas
 		</a>
 		<menu-button>
 			<template>
@@ -107,10 +101,6 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 						</a>
 					))
 				}
-			</div>
-
-			<div class="theme-toggle">
-				<ThemeToggle />
 			</div>
 		</div>
 	</div>
