@@ -9,7 +9,7 @@
 
 body {
   font-family: Rob;
-  background: linear-gradient(135deg, #686868, #4e4e4e);
+  background: rgb(41, 41, 41);
   backdrop-filter: blur(10px);
   color: #ffffff;
   min-height: 100vh;
@@ -21,7 +21,7 @@ body {
 /* 🌙 Mode Dark/Light automatique */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background-color: #0a0a0a;
+    --background-color: #4e4e4e;
     --text-color: #ffffff;
     --header-bg: rgba(20, 20, 20, 0.459);
     --hover-color: #aaaaaa;
@@ -94,7 +94,6 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgba(10, 10, 10, 0.6);
 }
 
 .hero-content {
@@ -154,4 +153,97 @@ header {
   50% {
     opacity: 0;
   }
+}
+
+/* Contact */
+.Contact{
+  width: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 200px;
+}
+
+.Contact-form{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.Contact-form button{
+  width: 20%;
+}
+
+.Contact-form div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 5px;
+}
+
+.Contact-input-email{
+  width: 60%;
+  height: 45px;
+  border-radius: 25px;
+  border: none;
+  padding: 15px;
+  color: black !important;
+}
+
+.Contact-input-object{
+  width: 50%;
+  height: 45px;
+  border-radius: 25px;
+  border: none;
+  padding: 15px;
+  color: black !important;
+}
+
+.Contact-input-content{
+  width: 60%;
+  height: 200px;
+  border-radius: 25px;
+  border: none;
+  padding: 15px;
+  color: black !important;
+}
+
+.Contact-btn-section{
+  display: flex;
+  flex-direction: row !important;
+  width: 100%;
+  gap: 25px !important;
+}
+
+.Contact-btn-cancel{
+  color: white;
+  background-color: #2186c0;
+  height: 45px;
+  border-radius: 15px;
+  z-index: 9999;
+  border: none;
+}
+
+.Contact-btn-cancel:hover{
+  background-color: transparent;
+  border: 3px solid #2186c0;
+}
+
+.Contact-btn-submit{
+  color: white;
+  background-color: transparent;
+  border: 3px solid #2186c0;
+  height: 45px;
+  border-radius: 15px;
+  z-index: 9999;
+}
+
+.Contact-btn-submit:hover{
+  background-color: #2186c0;
 }

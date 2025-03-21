@@ -1,7 +1,6 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
 export default function Header() {
   const pathname = usePathname();

@@ -57,7 +57,6 @@ export default function Home() {
         <div className="profil-picture">
           <img src="./lucas-picture.png" alt="lucas"/>
         </div>
-        
       </div>
     </section>
   );
