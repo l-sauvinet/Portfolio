@@ -27,6 +27,7 @@ export default function Contact() {
 
   return (
     <section className="Contact">
+      <div className="Contact-content">
       <h1 className="text-3xl font-bold mb-6">Contactez-moi</h1>
       <form className="Contact-form" onSubmit={handleSubmit}>
         <div>
@@ -72,6 +73,7 @@ export default function Contact() {
           </button>
         </div>
       </form>
+      </div>
     </section>
   );
 }
