@@ -257,3 +257,165 @@ header {
 .Contact-btn-submit:hover{
   background-color: #2186c0;
 }
+
+/* === Slide container & sections === */
+.slide-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.slide-section {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgb(41, 41, 41);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem;
+  transition: transform 0.8s ease-in-out, opacity 0.4s ease-in-out;
+}
+
+.slide-button {
+  margin-top: 3rem;
+  border: 2px solid #2186c0;
+  background: #2186c0;
+  color: white;
+  padding: 12px 24px;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.slide-button:hover {
+  background: transparent;
+  color: #2186c0;
+}
+
+/* Hero specific content */
+.hero-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
+  max-width: 1400px;
+  width: 100%;
+}
+
+.about-section {
+  flex: 1;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.highlight {
+  color: #2186c0;
+  font-size: 4rem;
+}
+
+/* Typing effect */
+.typing-effect {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.cursor {
+  display: inline-block;
+  font-weight: bold;
+  font-size: 2rem;
+  margin-left: 5px;
+}
+
+.blink {
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* About Section */
+.about-content {
+  max-width: 800px;
+  text-align: center;
+  padding: 2rem;
+}
+
+.about-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.about-content p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+}
+
+/* Slide vers le haut (About entre par le bas) */
+.slide-enter-up {
+  transform: translateY(100%);
+  opacity: 0;
+  z-index: 2;
+  animation: slideUpIn 0.8s forwards;
+}
+
+.slide-out-up {
+  transform: translateY(0%);
+  opacity: 1;
+  z-index: 1;
+  animation: slideUpOut 0.8s forwards;
+}
+
+/* Slide vers le bas (Hero entre par le haut) */
+.slide-enter-down {
+  transform: translateY(-100%);
+  opacity: 0;
+  z-index: 2;
+  animation: slideDownIn 0.8s forwards;
+}
+
+.slide-out-down {
+  transform: translateY(0%);
+  opacity: 1;
+  z-index: 1;
+  animation: slideDownOut 0.8s forwards;
+}
+
+/* Keyframes pour animations */
+@keyframes slideUpIn {
+  to {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes slideUpOut {
+  to {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
+@keyframes slideDownIn {
+  to {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes slideDownOut {
+  to {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
