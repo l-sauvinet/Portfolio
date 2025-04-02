@@ -1,12 +1,12 @@
 "use client";
 import { useState, useEffect } from "react";
-
+import { useLanguage } from '../context/languageContext';
+import { translations } from '../locales/translation';
 export default function Home() {
   const [currentSection, setCurrentSection] = useState<"hero" | "about">("hero");
   const [transitioning, setTransitioning] = useState(false);
   const [nextSection, setNextSection] = useState<"hero" | "about" | null>(null);
   const [direction, setDirection] = useState<"up" | "down">("down");
-
   useEffect(() => {
     document.body.style.overflow = "hidden";
     return () => {
@@ -66,15 +66,17 @@ export default function Home() {
 }
 
 function Hero({ onNext }: { onNext: () => void }) {
+  const { language } = useLanguage();
+  const t = translations[language];
   return (
     <>
       <div className="hero-content">
         <div className="about-section">
           <h1 className="hero-title">
-            Welcome, my name is <br />
+            {t.introAbout} <br />
             <span className="highlight">Sauvinet Lucas</span>
           </h1>
-          <h2>I am</h2>
+          <h2>{t.Iam}</h2>
           <TypingEffect />
         </div>
         <div className="profil-picture">
@@ -82,38 +84,53 @@ function Hero({ onNext }: { onNext: () => void }) {
         </div>
       </div>
       <button className="slide-button" onClick={onNext}>
-        About me
+        {t.about}
       </button>
     </>
   );
 }
 
 function About({ onBack }: { onBack: () => void }) {
+  const { language } = useLanguage();
+  const t = translations[language];
   return (
     <div className="about-content">
-      <h2>About me</h2>
+      <h2>{t.about}</h2>
       <p>
-        I'm a passionate web developer currently in a work-study program.
-        I love building modern, accessible, and high-performing interfaces.
+        {t.descAbout1}<br/>
+        {t.descAbout2}
       </p>
       <button className="slide-button" onClick={onBack}>
-        Back
+        {t.back}
       </button>
     </div>
   );
 }
 
 function TypingEffect() {
-  const texts: string[] = ["Web Developer", "Work-Study", "Passionate"];
-  const [index, setIndex] = useState<number>(0);
-  const [text, setText] = useState<string>("");
-  const [isDeleting, setIsDeleting] = useState<boolean>(false);
-  const [charIndex, setCharIndex] = useState<number>(0);
-  const [isPaused, setIsPaused] = useState<boolean>(false);
+  const { language } = useLanguage();
 
-  const typingSpeed: number = 100;
-  const deletingSpeed: number = 50;
-  const pauseBetweenWords: number = 1500;
+  const texts = language === 'fr'
+    ? ['Développeur Web', 'Alternance', 'Passionné']
+    : ['Web Developer', 'Work-Study', 'Passionate'];
+
+  const [index, setIndex] = useState(0);
+  const [text, setText] = useState('');
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [charIndex, setCharIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+
+  const typingSpeed = 100;
+  const deletingSpeed = 50;
+  const pauseBetweenWords = 1500;
+
+  useEffect(() => {
+    setText('');
+    setCharIndex(0);
+    setIndex(0);
+    setIsDeleting(false);
+    setIsPaused(false);
+  }, [language]);
 
   useEffect(() => {
     let timeout: NodeJS.Timeout;
@@ -121,13 +138,13 @@ function TypingEffect() {
     if (!isDeleting && charIndex < texts[index].length) {
       timeout = setTimeout(() => {
         setText((prev) => prev + texts[index][charIndex]);
-        setCharIndex(charIndex + 1);
+        setCharIndex((prev) => prev + 1);
         setIsPaused(false);
       }, typingSpeed);
     } else if (isDeleting && charIndex > 0) {
       timeout = setTimeout(() => {
         setText((prev) => prev.slice(0, -1));
-        setCharIndex(charIndex - 1);
+        setCharIndex((prev) => prev - 1);
         setIsPaused(false);
       }, deletingSpeed);
     } else if (!isDeleting && charIndex === texts[index].length) {
@@ -135,7 +152,7 @@ function TypingEffect() {
       timeout = setTimeout(() => setIsDeleting(true), pauseBetweenWords);
     } else if (isDeleting && charIndex === 0) {
       setIsDeleting(false);
-      setIndex((prevIndex) => (prevIndex + 1) % texts.length);
+      setIndex((prev) => (prev + 1) % texts.length);
       setIsPaused(false);
     }
 
@@ -145,7 +162,7 @@ function TypingEffect() {
   return (
     <h2 className="typing-effect">
       {text}
-      <span className={`cursor ${isPaused ? "blink" : "solid"}`}>|</span>
+      <span className={`cursor ${isPaused ? 'blink' : 'solid'}`}>|</span>
     </h2>
   );
 }
