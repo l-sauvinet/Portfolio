@@ -101,9 +101,9 @@ function About({ onBack }: { onBack: () => void }) {
     <div className="about-content">
       <h2>{t.about}</h2>
       <p> 
-        Je suis un développeur web fullstack passionné, actuellement en alternance. J’aime autant travailler sur le front-end que sur le back-end, avec une approche centrée sur la qualité, la performance et l’expérience utilisateur. 
+        {t.descAbout1}
         <br/><br/> 
-        Curieux et polyvalent, je conçois des interfaces modernes, accessibles et efficaces, tout en veillant à construire des bases solides côté serveur. Mon objectif : créer des applications complètes, utiles et bien pensées, de la base de données jusqu’au pixel. 
+        {t.descAbout2}
       </p>
       <div className="about-btn">
         <button className="CV-btn" onClick={myCV}>{t.CV}</button>
