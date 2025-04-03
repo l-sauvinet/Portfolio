@@ -18,7 +18,7 @@ export default function Projects() {
                 </div>
                 <div className="projects-card hover-box">
                     <h3>PassGuard</h3>
-                    <img className="background-card" src="/passGuard.png"/>
+                    <img className="background-card" src="/PassGuard.png"/>
                     <div className="text-hover"><span>{t.detail}</span><img src="/detail-icon.svg"/></div>
                 </div>
                 <div className="projects-card hover-box">
