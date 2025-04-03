@@ -487,11 +487,17 @@ header {
   align-items: center;
 }
 
-.projects-content h2{
-  padding-left: 150px;
-  width: 100%;
+.projects-inner {
+  max-width: 1150px; /* même largeur que .projects-list */
+  padding-left: 0;
+  margin: 0 auto;
+}
+
+.projects-inner h2 {
   font-family: 'K2D', sans-serif;
   font-size: 45px;
+  margin-bottom: 30px;
+  text-align: left;
 }
 
 .projects-list{
@@ -799,6 +805,45 @@ header {
     padding: 20px;
   }
 }
+
+/* 📱 Très petits écrans (mobiles < 480px) */
+@media screen and (max-width: 480px) {
+  .logo {
+    font-size: 1.5rem;
+  }
+
+  .hero-title {
+    font-size: 1.3rem;
+  }
+
+  .highlight {
+    font-size: 36px;
+  }
+
+  .typing-effect {
+    font-size: 1.3rem;
+  }
+
+  .cursor {
+    font-size: 1.3rem;
+  }
+
+  .hero-content {
+    padding: 10px 15px;
+    gap: 20px;
+  }
+
+  .profil-picture img {
+    width: 200px;
+  }
+
+  .slide-button {
+    width: 110px;
+    font-size: 0.95rem;
+    padding: 8px 16px;
+  }
+}
+
 
 /* 🍔 Bouton burger : visible seulement sur mobile */
 .burger {
