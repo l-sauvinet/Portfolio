@@ -30,6 +30,7 @@ export const translations = {
       reactDesc: "Bibliothèque pour interfaces utilisateur.",
       nextDesc: "Framework pour le rendu côté serveur.",
       tsDesc: "Superset de JavaScript avec typage.",
+      CV: "Mon CV",
     },
     en: {
       aboutHome: "About Me.",
@@ -62,6 +63,7 @@ export const translations = {
       reactDesc: "Library for user interfaces.",
       nextDesc: "Framework for server-side rendering.",
       tsDesc: "Superset of JavaScript with typing.",
+      CV: "My CV",
     },
   };
   

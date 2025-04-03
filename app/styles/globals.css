@@ -177,7 +177,6 @@ header {
 }
 
 .slide-button {
-  margin-top: 3rem;
   border: 2px solid #2186c0;
   background: #2186c0;
   color: white;
@@ -186,6 +185,7 @@ header {
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.3s ease;
+  width: 150px;
 }
 
 .slide-button:hover {
@@ -201,6 +201,9 @@ header {
   max-width: 800px;
   text-align: center;
   padding: 2rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .about-content h2 {
@@ -211,6 +214,31 @@ header {
 .about-content p {
   font-size: 1.2rem;
   line-height: 1.8;
+}
+
+.about-btn{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 3rem;
+  gap: 10px;
+}
+
+.CV-btn {
+  border: 2px solid #2186c0;
+  background: #2186c0;
+  color: white;
+  padding: 12px 24px;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 150px;
+}
+
+.CV-btn:hover {
+  background: transparent;
+  color: #2186c0;
 }
 
 .slide-enter-up {
