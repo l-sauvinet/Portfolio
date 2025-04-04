@@ -479,7 +479,7 @@ header {
 }
 
 .projects-content{
-  margin-top: 35px;
+  margin-top: 75px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -487,17 +487,12 @@ header {
   align-items: center;
 }
 
-.projects-inner {
-  max-width: 1150px; /* même largeur que .projects-list */
-  padding-left: 0;
-  margin: 0 auto;
-}
-
-.projects-inner h2 {
+.projects-content h2 {
+  width: 100%;
   font-family: 'K2D', sans-serif;
   font-size: 45px;
-  margin-bottom: 30px;
-  text-align: left;
+  text-align: center;
+  margin-bottom: 75px;
 }
 
 .projects-list{
@@ -769,7 +764,15 @@ header {
     font-size: 1.6rem;
   }
 
-  .typing-effect {
+  .typing-effect{
+    font-size: 1.6rem;
+  }
+
+  .cursor.solid{
+    font-size: 1.6rem;
+  }
+
+  .cursor.blink{
     font-size: 1.6rem;
   }
 

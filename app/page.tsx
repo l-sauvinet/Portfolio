@@ -119,7 +119,7 @@ function TypingEffect() {
   const { language } = useLanguage();
 
   const texts = language === 'fr'
-    ? ['Développeur Web', 'Alternance', 'Passionné']
+    ? ['Développeur Web', 'Alternant', 'Passionné']
     : ['Web Developer', 'Work-Study', 'Passionate'];
 
   const [index, setIndex] = useState(0);
