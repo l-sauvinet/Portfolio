@@ -419,6 +419,7 @@ header {
   max-width: 1200px;
   display: flex;
   flex-direction: column;
+  margin-bottom: 50px;
 }
 
 @media (min-width: 768px) {
@@ -496,7 +497,7 @@ header {
 }
 
 .projects-list{
-  width:1150px;
+  max-width:1150px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -755,6 +756,18 @@ header {
 
   .nav-menu a {
     font-size: 1rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .projects-list{
+    width: 940px;
+  }
+}
+
+@media screen and (min-height: 200px) and (max-height: 800px){
+  .profil-picture img{
+    height: 400px;
   }
 }
 
