@@ -2,22 +2,22 @@
 import { useState, useEffect } from "react";
 import { useLanguage } from '../context/languageContext';
 import { translations } from '../locales/translation';
+
 export default function Home() {
   const [currentSection, setCurrentSection] = useState<"hero" | "about">("hero");
   const [transitioning, setTransitioning] = useState(false);
   const [nextSection, setNextSection] = useState<"hero" | "about" | null>(null);
-  const [direction, setDirection] = useState<"up" | "down">("down");
+
   useEffect(() => {
-    document.body.style.overflow = "hidden";
+    document.body.style.overflow = currentSection === "hero" ? "hidden" : "auto";
     return () => {
       document.body.style.overflow = "auto";
     };
-  }, []);
+  }, [currentSection]);
 
   const handleSwitch = (target: "hero" | "about") => {
     if (transitioning || target === currentSection) return;
 
-    setDirection(target === "about" ? "down" : "up");
     setNextSection(target);
     setTransitioning(true);
 
@@ -25,7 +25,7 @@ export default function Home() {
       setCurrentSection(target);
       setNextSection(null);
       setTransitioning(false);
-    }, 800);
+    }, 800); // Durée de l'animation : 0.8s
   };
 
   return (
@@ -33,12 +33,8 @@ export default function Home() {
       {/* Active section */}
       <section
         className={`slide-section ${
-          transitioning
-            ? direction === "down"
-              ? "slide-out-up"
-              : "slide-out-down"
-            : "slide-in"
-        }`}
+          !transitioning ? (currentSection === "about" ? "about" : "hero") : ""
+        } ${transitioning ? "fade-out" : ""}`}
       >
         {currentSection === "hero" ? (
           <Hero onNext={() => handleSwitch("about")} />
@@ -51,8 +47,8 @@ export default function Home() {
       {transitioning && nextSection && (
         <section
           className={`slide-section ${
-            direction === "down" ? "slide-enter-up" : "slide-enter-down"
-          }`}
+            nextSection === "about" ? "about" : "hero"
+          } fade-in`}
         >
           {nextSection === "hero" ? (
             <Hero onNext={() => handleSwitch("about")} />
@@ -99,16 +95,31 @@ function About({ onBack }: { onBack: () => void }) {
   const t = translations[language];
   return (
     <div className="about-content">
+      
       <h2>{t.about}</h2>
-      <p> 
+      <p>
         {t.descAbout1}
-        <br/><br/> 
+        <br /><br />
+        {t.descAbout2}
+      </p>
+      
+      <h2>{t.class}</h2>
+      <p>
+        {t.descClasse}
+      </p>
+
+      <h2>{t.about}</h2>
+      <p>
+        {t.descAbout1}
+        <br /><br />
         {t.descAbout2}
       </p>
       <div className="about-btn">
-        <button className="CV-btn" onClick={myCV}>{t.CV}</button>
-        <button className="slide-button" onClick={onBack}>
-          {t.back}
+        <button className="CV-btn" onClick={myCV}>
+          {t.CV}
+        </button>
+        <button className="CV-btn" onClick={myCV}>
+          {t.Contrat}
         </button>
       </div>
     </div>
@@ -117,7 +128,6 @@ function About({ onBack }: { onBack: () => void }) {
 
 function TypingEffect() {
   const { language } = useLanguage();
-
   const texts = language === 'fr'
     ? ['Développeur Web', 'Alternant', 'Passionné']
     : ['Web Developer', 'Work-Study', 'Passionate'];

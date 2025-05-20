@@ -60,7 +60,7 @@ header {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  gap: 70px;
+  gap: 50px;
   padding: 20px;
   border-radius: 30px;
   margin-right: 50px;
@@ -76,6 +76,11 @@ header {
 
 .nav-menu a.active {
   color: #2186c0;
+  transform: scale(1.2);
+}
+
+.nav-menu a img svg path.active {
+  stroke: #2186c0;
   transform: scale(1.2);
 }
 
@@ -106,7 +111,7 @@ header {
   justify-content: space-between;
 }
 
-.about-section{
+.about-section {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -155,25 +160,33 @@ header {
   }
 }
 
-
 .slide-container {
   position: relative;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
+  width: 99vw;
+  min-height: 100vh;
 }
 
 .slide-section {
   position: absolute;
   width: 100%;
-  height: 100%;
+  min-height: 100vh;
   background: rgb(41, 41, 41);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 3rem;
-  transition: transform 0.8s ease-in-out, opacity 0.4s ease-in-out;
+}
+
+.slide-section.hero {
+  height: 100vh;
+  overflow: hidden;
+  contain: content;
+}
+
+.slide-section.about {
+  height: auto;
+  overflow-y: auto;
 }
 
 .slide-button {
@@ -186,15 +199,12 @@ header {
   cursor: pointer;
   transition: all 0.3s ease;
   width: 150px;
+  position: relative;
 }
 
 .slide-button:hover {
   background: transparent;
   color: #2186c0;
-}
-
-.about-section {
-  flex: 1;
 }
 
 .about-content {
@@ -204,6 +214,7 @@ header {
   display: flex;
   align-items: center;
   flex-direction: column;
+  margin-top: 150px;
 }
 
 .about-content h2 {
@@ -216,12 +227,17 @@ header {
   line-height: 1.8;
 }
 
-.about-btn{
+.about-btn {
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: space-between;
   margin-top: 3rem;
-  gap: 10px;
+  top: 75px;
+  left: 25px;
+  right: 25px;
+  padding: 50px;
+  gap: 30px;
 }
 
 .CV-btn {
@@ -241,59 +257,26 @@ header {
   color: #2186c0;
 }
 
-.slide-enter-up {
-  transform: translateY(100%);
+.fade-in {
   opacity: 0;
   z-index: 2;
-  animation: slideUpIn 0.8s forwards;
+  animation: fadeIn 0.8s forwards;
 }
 
-.slide-out-up {
-  transform: translateY(0%);
+.fade-out {
   opacity: 1;
   z-index: 1;
-  animation: slideUpOut 0.8s forwards;
+  animation: fadeOut 0.8s forwards;
 }
 
-.slide-enter-down {
-  transform: translateY(-100%);
-  opacity: 0;
-  z-index: 2;
-  animation: slideDownIn 0.8s forwards;
-}
-
-.slide-out-down {
-  transform: translateY(0%);
-  opacity: 1;
-  z-index: 1;
-  animation: slideDownOut 0.8s forwards;
-}
-
-/* Keyframes pour animations */
-@keyframes slideUpIn {
+@keyframes fadeIn {
   to {
-    transform: translateY(0%);
     opacity: 1;
   }
 }
 
-@keyframes slideUpOut {
+@keyframes fadeOut {
   to {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-}
-
-@keyframes slideDownIn {
-  to {
-    transform: translateY(0%);
-    opacity: 1;
-  }
-}
-
-@keyframes slideDownOut {
-  to {
-    transform: translateY(100%);
     opacity: 0;
   }
 }
@@ -486,6 +469,7 @@ header {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  margin-bottom: 75px;
 }
 
 .projects-content h2 {
@@ -557,6 +541,90 @@ header {
   filter: blur(4px) brightness(0.6);
 }
 
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 800px;
+  max-height: 500px;
+  position: relative;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #333;
+}
+
+.modal-details {
+  margin: 1rem 0;
+}
+
+.modal-details p {
+  margin: 0.5rem 0;
+  color: #666;
+}
+
+.modal-image {
+  width: 50%;
+  height: auto;
+  margin: 1rem 0;
+  border-radius: 5px;
+}
+
+.modal-link {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.modal-link:hover {
+  text-decoration: underline;
+}
+
+.fade-in {
+  opacity: 0;
+  z-index: 2;
+  animation: fadeIn 0.8s forwards;
+}
+
+.fade-out {
+  opacity: 1;
+  z-index: 1;
+  animation: fadeOut 0.8s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+  }
+}
 
 /*Competences*/
 .Skill-section {
@@ -628,7 +696,7 @@ header {
 }
 
 .skills:hover .skill-image{
-  filter: blur(4px) brightness(0.6);
+  filter: blur(4px) brightness(0.2);
   
 }
 
@@ -1197,5 +1265,42 @@ header {
 
   .Contact-form button {
     width: 80%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .projects {
+    width: 99vw;
+    min-height: 100vh;
+    padding-top: 120px;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+  }
+
+  .projects-content h2 {
+    padding-left: 0;
+    text-align: center;
+    font-size: 40px;
+  }
+
+  .projects-list {
+    width: 100%;
+    justify-content: center;
+    gap: 40px;
+  }
+
+  .projects-card {
+    width: 300px;
+    height: 180px;
+  }
+
+  .background-card {
+    width: 300px;
+    height: 180px;
+  }
+
+  .hover-box .text-hover {
+    font-size: 18px;
   }
 }

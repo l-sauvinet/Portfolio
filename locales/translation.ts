@@ -10,7 +10,7 @@ export const translations = {
       descAbout1: "Je suis un développeur web fullstack passionné, actuellement en alternance. J’aime autant travailler sur le front-end que sur le back-end, avec une approche centrée sur la qualité, la performance et l’expérience utilisateur.",
       descAbout2: "Curieux et polyvalent, je conçois des interfaces modernes, accessibles et efficaces, tout en veillant à construire des bases solides côté serveur. Mon objectif : créer des applications complètes, utiles et bien pensées, de la base de données jusqu’au pixel.",
       Iam: "Je suis",
-      about: "À propos",
+      about: "À propos de moi",
       detail: "Voir details",
       contactTitle: "Contactez Moi",
       contactEmail: "Votre Email",
@@ -31,6 +31,9 @@ export const translations = {
       nextDesc: "Framework pour le rendu côté serveur.",
       tsDesc: "Superset de JavaScript avec typage.",
       CV: "Mon CV",
+      class: "Classe BTS SIO CIFEP Chambéry",
+      descClasse: "Alice, Valentin, Lucas M, Elie, Anas, Benjamin, Lucas S",
+      Contrat: "Mon contrat",
     },
     en: {
       aboutHome: "About Me.",
@@ -64,6 +67,9 @@ export const translations = {
       nextDesc: "Framework for server-side rendering.",
       tsDesc: "Superset of JavaScript with typing.",
       CV: "My CV",
+      class: "Classe BTS SIO CIFEP Chambéry",
+      descClasse: "Alice, Valentin, Lucas M, Elie, Anas, Benjamin, Lucas S",
+      Contrat: "My contrat",
     },
   };
   

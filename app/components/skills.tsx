@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useLanguage } from '../../context/languageContext';
 import { translations } from '../../locales/translation';
 

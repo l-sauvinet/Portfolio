@@ -31,7 +31,9 @@ export default function Header() {
         <a href="/" className={isActive('/') ? 'active' : ''}>{t.aboutHome}</a>
         <a href="/projects" className={isActive('/projects') ? 'active' : ''}>{t.projects}</a>
         <a href="/skills" className={isActive('/skills') ? 'active' : ''}>{t.skills}</a>
-        <a href="/contact" className={isActive('/contact') ? 'active' : ''}>{t.contact}</a>
+        <a href="/patrimoine" className={isActive('/patrimoine') ? 'active' : ''}>Patrimoine.</a>
+        <a href="/synthese" className={isActive('/synthese') ? 'active' : ''}>Synthese.</a>
+        <a href="/contact" className={isActive('/contact') ? 'active' : ''}><img src='mail-icon.svg'/></a>
         <LanguageSwitcher />
       </nav>
     </header>
